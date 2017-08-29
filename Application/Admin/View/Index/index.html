@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/libs/modernizr.min.js"></script>
+</head>
+<body>
+<include file="Public/header"/>
+<include file="Public/left" />
+
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            
+        </div>
+        
+        <div class="result-wrap">
+            <div class="result-title">
+                <h1>系统基本信息</h1>
+            </div>
+            <div class="result-content">
+                <ul class="sys-info-list">
+                    <li>
+                        <label class="res-lab">Web服务器：</label><span class="res-info"><?php echo $_SERVER["SERVER_SOFTWARE"]; ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">PHP版本:</label><span class="res-info"><?php echo PHP_VERSION;  ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">MySQL版本:</label><span class="res-info"><?php mysql_connect("localhost","root","");  echo mysql_get_server_info();  ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">GD库版本:</label><span class="res-info"><?php $gd=gd_info(); echo $gd["GD Version"]; ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">FreeType:</label><span class="res-info"><?php echo $gd["FreeType Support"]?"支持":"不支持"; ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">远程文件获取:</label><span class="res-info"><?php echo ini_get("allow_url_fopen")?"支持":"不支持"; ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">最大上传限制:</label><span class="res-info"><?php echo ini_get("file_uploads") ? ini_get("upload_max_filesize"):"Disable"; ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">最大执行时间:</label><span class="res-info"><?php echo ini_get("max_execution_time")."秒"  ?></span>
+                    </li>
+                    <li>
+                        <label class="res-lab">服务器时间:</label><span class="res-info"><?php echo date("Y-m-d H:i:s",time());  ?></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

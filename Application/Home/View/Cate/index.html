@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width"/>
+<meta name="applicable-device" content="pc">
+<link rel="stylesheet" type="text/css" media="screen" href="__PUBLIC__/style/style.css"/>
+<link rel="shortcut icon" href="http://yispace.net/wp-content/themes/weiweiqi/img/favicon.ico"/>
+<title>米克阳光</title>
+
+</head>
+<body class="home blog">
+
+<include file="Public/head" />
+
+
+<div class="wrapper">
+<div class="content">
+<ul class="excerpt thumb">
+<volist name="list" id="vo">
+<li>
+<a href="__MODULE__/Article/index/id/{$vo.id}" class="pic"><img src="__ROOT__/{$vo.pic}" alt="{$vo.title}"/></a>
+
+<h2 class="excerpt-tit">
+<a href="__MODULE__/Article/index/id/{$vo.id}">{$vo.title}</a>
+</h2>
+<p class="excerpt-desc">{$vo.desc}...</p>
+<div class="excerpt-time">{$vo.time|date="m-d",###}</div>
+</li>
+</volist>
+</ul>
+<div class="paging">{$page}</div>
+</div>
+<include file="Public/right" /></div>
+<include file="Public/footer" />
+
+</body>
+</html>
+ 
+ 
+ 

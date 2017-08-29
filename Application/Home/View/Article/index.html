@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="pc,mobile" name="applicable-device">
+<meta content="no-transform" http-equiv="Cache-Control">
+<meta content="no-siteapp" http-equiv="Cache-Control">
+<meta content="width=device-width" name="viewport">
+<link href="__PUBLIC__/style/style.css" media="screen" type="text/css" rel="stylesheet">
+<script src="__PUBLIC__/style/jquery.min.js"></script> 
+<title>米克阳光__{$catename}__{$arts.title}</title>
+</head>
+<body class="archive category category-philosophy-life category-18">
+
+<include file="Public/head" />
+
+<div class="wrapper">
+	<div class="content">
+
+<div class="meta">
+	<h1 class="meta-tit">{$arts.title}</h1>
+	<p class="meta-info">发表:<a href="__APP__">{$catename}</a> &nbsp;&nbsp; 发表日期：{$arts.time|date="Y-m-d",###} &nbsp;&nbsp;  </p>
+</div>
+
+
+
+
+<div class="entry">
+	<p><img width="630" src="__ROOT__/{$arts.pic}"></p>
+
+ <?php echo  htmlspecialchars_decode($arts["content"]);   ?>
+
+</div>
+
+
+<div>
+<if condition="$prevs">
+<strong>上一篇：</strong>
+<a href="__MODULE__/Article/index/id/{$prevs.id}">{$prevs.title}</a>
+<else />
+<strong>上一篇：没有了</strong>
+</else>
+</if>
+</div>
+
+<div style="margin:10px 0;">
+<if condition="$nexts">
+<strong>下一篇：</strong>
+<a href="__MODULE__/Article/index/id/{$nexts.id}" >{$nexts.title}</a>
+<else />
+<strong>下一篇：没有了</strong>
+</else>
+</if>
+</div>
+
+
+
+
+</div>
+<include file="Public/right" /></div>
+
+<include file="Public/footer" />
+
+
+
+
+
+
+
+</body></html>
